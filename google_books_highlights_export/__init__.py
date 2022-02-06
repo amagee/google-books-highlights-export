@@ -8,6 +8,7 @@ import typer
 
 from google_books_highlights_export.googledrive import get_credentials, iter_files
 from google_books_highlights_export.notes import iter_notes
+from google_books_highlights_export.jsonwriter import JsonWriter
 from google_books_highlights_export.vimwiki import VimWikiWriter
 
 user_cache_path = Path(appdirs.user_cache_dir("google-books-highlights-export", "amagee"))
@@ -35,7 +36,7 @@ def export(
 
     out_dir.mkdir(parents=True, exist_ok=True)
 
-    writer = VimWikiWriter(out_dir)
+    writer = JsonWriter(out_dir)
 
     filenames = []
     for item in iter_files(service, folder):

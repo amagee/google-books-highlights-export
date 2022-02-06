@@ -9,6 +9,12 @@ class Note:
     content: str
     link: str
 
+    def to_json(self):
+        return {
+            "content": self.content,
+            "link": self.link
+        }
+
 
 def iter_notes(html_str: str) -> Generator[Note, None, None]:
     """
