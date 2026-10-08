@@ -5,9 +5,15 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "build-and-push:web": "si netlify deploy --sops netlify.enc.sops.yaml"
   },
   "devDependencies": {
+    "@vitejs/plugin-react": "^6.1.2",
     "vite": "^8.3.3"
+  },
+  "dependencies": {
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0"
   }
 }
