@@ -13,6 +13,10 @@ books.
 It outputs a single JSON file by default, or Markdown with `--format markdown`
 (one `.md` file per book plus an `index.md`).
 
+## Web version
+
+You can also extract your notes at <https://google-books-highlights-export.andrewmagee.tech/>.
+
 ## Setup
 
 ### Getting your folder ID
