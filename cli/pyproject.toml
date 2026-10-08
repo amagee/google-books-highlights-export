@@ -1,0 +1,32 @@
+[project]
+name = "google-books-highlights-export"
+version = "0.2.0"
+description = "Export your Google Play Books highlights from Google Drive"
+readme = "README.md"
+authors = [{ name = "Andrew Magee", email = "amagee@gmail.com" }]
+license = "MIT"
+requires-python = ">=3.9"
+dependencies = [
+    "google-api-python-client>=2.9.0",
+    "google-auth-httplib2>=0.1.0",
+    "google-auth-oauthlib>=0.4.4",
+    "beautifulsoup4>=4.9.3",
+    "appdirs>=1.4.4",
+    "typer>=0.3.2",
+    "html5lib>=1.1",
+]
+
+[project.urls]
+Homepage = "https://github.com/amagee/google-books-highlights-export"
+Repository = "https://github.com/amagee/google-books-highlights-export"
+
+[project.scripts]
+google-books-highlights-export = "google_books_highlights_export:main"
+
+[build-system]
+requires = ["uv_build>=0.9,<0.13"]
+build-backend = "uv_build"
+
+[tool.uv.build-backend]
+module-root = ""
+source-exclude = ["*\\~"]

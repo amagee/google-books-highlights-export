@@ -1,0 +1,14 @@
+{
+  "installed": {
+    "client_id": "547492225553-2js46pekv9pircklrqcg18joo9qrdgfj.apps.googleusercontent.com",
+    "project_id": "lyrical-ring-317104",
+    "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+    "token_uri": "https://oauth2.googleapis.com/token",
+    "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+    "client_secret": "JMd7XTCMOETIIUSZEYnCje6a",
+    "redirect_uris": [
+      "urn:ietf:wg:oauth:2.0:oob",
+      "http://localhost"
+    ]
+  }
+}

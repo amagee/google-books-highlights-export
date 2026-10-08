@@ -1,0 +1,5 @@
+node_modules
+dist
+.netlify
+netlify-deploy.log
+netlify.enc.sops.yaml

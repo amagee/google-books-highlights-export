@@ -1,0 +1,134 @@
+.error {
+  max-width: 32rem;
+  margin: 3rem auto;
+  padding: 1.25rem 1.5rem;
+  font-family: system-ui, sans-serif;
+  line-height: 1.5;
+  color: #3c1d1d;
+  background: #fdf1f0;
+  border: 1px solid #f2c4c0;
+  border-radius: 8px;
+}
+.error h2 { margin: 0 0 0.5rem; font-size: 1.15rem; }
+.error p { margin: 0; }
+.error details { margin-top: 1rem; font-size: 0.85rem; color: #6b4a4a; }
+.error summary { cursor: pointer; }
+.error pre { white-space: pre-wrap; word-break: break-word; }
+
+.signin {
+  display: block;
+  margin: 3rem auto 0;
+  padding: 0.7rem 1.4rem;
+  font: 500 1rem system-ui, sans-serif;
+  color: #fff;
+  background: #1a73e8;
+  border: 0;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.signin:disabled { background: #9bbcf0; cursor: default; }
+
+body {
+  margin: 0;
+  padding: 0 1rem 3rem;
+  font-family: system-ui, sans-serif;
+  color: #202124;
+  background: #f8f9fa;
+}
+
+.status {
+  max-width: 32rem;
+  margin: 2rem auto;
+  text-align: center;
+}
+.status p { margin: 0 0 0.75rem; }
+.status progress { width: 100%; height: 0.6rem; accent-color: #1a73e8; }
+
+.notes {
+  max-width: 72rem;
+  margin: 2rem auto 0;
+}
+.folder {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 0.25rem 1rem;
+  margin: 0 0 1rem;
+}
+.folder dt { color: #5f6368; }
+.folder dd { margin: 0; min-width: 0; overflow-wrap: anywhere; }
+.folder-id { font-family: ui-monospace, monospace; user-select: all; }
+.notes-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+.notes-summary { margin: 0 auto 0 0; color: #5f6368; }
+.notes-toolbar button {
+  padding: 0.45rem 0.9rem;
+  font: inherit;
+  color: #1a73e8;
+  background: #fff;
+  border: 1px solid #dadce0;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.notes-toolbar button:hover { background: #f1f6fe; }
+.notes-scroll {
+  overflow-x: auto;
+  background: #fff;
+  border: 1px solid #dadce0;
+}
+.notes-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+.notes-table th,
+.notes-table td {
+  padding: 0.4rem 0.6rem;
+  border: 1px solid #e0e3e7;
+  text-align: left;
+  vertical-align: top;
+}
+.notes-table th {
+  font-weight: 600;
+  color: #3c4043;
+  background: #f1f3f4;
+}
+.notes-table tbody tr:nth-child(even) { background: #fafafa; }
+.notes-table tbody tr:hover { background: #e8f0fe; }
+.notes-table td { line-height: 1.4; white-space: pre-wrap; }
+.notes-table .num { width: 1%; text-align: right; color: #5f6368; background: #f8f9fa; }
+.notes-table .book { width: 16rem; color: #5f6368; }
+.notes-table a { color: #1a73e8; text-decoration: none; }
+.notes-table a:hover { text-decoration: underline; }
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  color: #5f6368;
+}
+.pagination button {
+  padding: 0.45rem 0.9rem;
+  font: inherit;
+  color: #1a73e8;
+  background: #fff;
+  border: 1px solid #dadce0;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.pagination button:disabled { color: #9aa0a6; cursor: default; }
+
+/* The Picker positions its dialog with inline top/left, which can land it in
+   the bottom-right corner. Pin it to the middle of the viewport instead. */
+.picker-dialog {
+  position: fixed !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%);
+}
