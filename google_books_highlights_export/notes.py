@@ -1,4 +1,5 @@
 from typing import Generator
+from urllib.parse import urlsplit, parse_qs
 
 from dataclasses import dataclass
 from bs4 import BeautifulSoup
@@ -8,6 +9,27 @@ from bs4 import BeautifulSoup
 class Note:
     content: str
     link: str
+
+    def to_json(self):
+        return {
+            "content": self.content,
+            "link": self.link
+        }
+
+
+def unwrap_google_redirect(link: str) -> str:
+    """
+    Links in the Drive-exported HTML are wrapped in Google's redirector, e.g.
+    https://www.google.com/url?q=<real url>&sa=...; return the real URL.
+    """
+    if not link:
+        return link
+    parts = urlsplit(link)
+    if parts.netloc in ("www.google.com", "google.com") and parts.path == "/url":
+        q = parse_qs(parts.query).get("q")
+        if q:
+            return q[0]
+    return link
 
 
 def iter_notes(html_str: str) -> Generator[Note, None, None]:
@@ -30,5 +52,5 @@ def iter_notes(html_str: str) -> Generator[Note, None, None]:
             tr = tbody.contents[0]
             content = tr.contents[1].contents[0].contents[0].text
             link = tr.contents[2].contents[0].contents[0].contents[0].get("href")
-            yield Note(content, link)
+            yield Note(content, unwrap_google_redirect(link))
 
