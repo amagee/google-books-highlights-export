@@ -36,6 +36,15 @@ body {
   background: #f8f9fa;
 }
 
+.instructions {
+  max-width: 54rem;
+  margin: 2rem auto 0;
+  line-height: 1.6;
+  color: #3c4043;
+}
+.instructions p { margin: 0; }
+.instructions p + p { margin-top: 1rem; }
+
 .status {
   max-width: 32rem;
   margin: 2rem auto;

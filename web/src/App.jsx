@@ -133,6 +133,20 @@ export default function App() {
       >
         Choose highlights folder in Google Drive
       </button>
+      {view == null &&
+        <section className="instructions">
+          <p>
+            This is a simple Google Play Books notes exporter. After hitting the button above,
+            you will be prompted to authorise this app to read the files you select. Then a Google Drive folder will
+            appear and you can select your <em>Play Books Notes</em> folder. Then hit Select and the app will read
+            the files in that folder and extract the notes. You will see them on the screen and also be able to export
+            them to CSV or JSON.
+          </p>
+          <p>
+            None of your data is persisted to a server anywhere.
+          </p>
+        </section>
+      }
       {view?.kind === "error" && <ErrorBox {...view} />}
       {view?.kind === "progress" && <Progress {...view} />}
       {view?.kind === "notes" && (
