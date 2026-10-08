@@ -1,6 +1,6 @@
 [project]
 name = "google-books-highlights-export"
-version = "0.2.0"
+version = "0.3.0"
 description = "Export your Google Play Books highlights from Google Drive"
 readme = "README.md"
 authors = [{ name = "Andrew Magee", email = "amagee@gmail.com" }]
